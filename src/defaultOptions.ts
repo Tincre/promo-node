@@ -1,4 +1,4 @@
-import { Options } from './types';
+import { Options } from './types/propTypes';
 
 const options: Options = {
   cloudinary: {
