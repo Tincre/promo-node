@@ -1,4 +1,4 @@
-import { CloudinaryOptions } from './types';
+import { CloudinaryOptions } from './types/propTypes';
 
 export function getWidgetCallback(
   setFileImage: any,
