@@ -9,7 +9,7 @@
   "license": "MPL-2.0",
   "author": "Jason R. Stevens, CFA on behalf of Tincre <jason@tincre.com> (https://tincre.com)",
   "main": "dist/index.js",
-  "module": "dist/promo-button.esm.js",
+  "module": "dist/promo-button-node.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
