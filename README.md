@@ -28,13 +28,41 @@ You'll need the following environment variables available in Node.js:
 These values can be found in the [Tincre.dev Dashboard](https://tincre.dev/dashboard)
 after you're logged in and have created at least one app. 
 
-##### Example `.env.local`
+#### `.env.local` Example
 
 ```env 
 PROMO_API_KEY=
 PROMO_CLIENT_ID=
 PROMO_APP_ID=
 PROMO_CLIENT_SECRET=
+```
+### Usage 
+
+#### `generateAccessToken`
+
+```js
+/* An example to hit the promo-api /campaigns endpoint */
+const formData = {...} // campaign submission data, see https://tincre.dev/docs
+const clientSecret = process.env.PROMO_CLIENT_SECRET || "";
+const appId = process.env.PROMO_APP_ID || "";
+const clientId = process.env.PROMO_CLIENT_ID || "";
+let accessTokenSigned = generateAccessToken(
+  "http://localhost:3000", // update w/hostname + base route
+  clientId,
+  appId,
+  clientSecret
+);
+let resultToken = await getToken(accessTokenSigned);
+const headers = {
+  "Content-Type": "application/json",
+  Authorization: `Bearer ${resultToken}`,
+};
+
+const promoApiRes = await fetch(`https://promo.api.tincre.dev/campaigns`, {
+  method: "POST",
+  headers: headers,
+  body: JSON.stringify(formData),
+});
 ```
 
 ## Support 
