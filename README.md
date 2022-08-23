@@ -42,7 +42,9 @@ PROMO_CLIENT_SECRET=
 
 ```js
 /* An example to hit the promo-api /campaigns endpoint */
-const formData = {...} // campaign submission data, see https://tincre.dev/docs
+import { generateAccessToken } from '@tincre/promo-button-node';
+
+const formData = {...}; // campaign submission data, see https://tincre.dev/docs
 const clientSecret = process.env.PROMO_CLIENT_SECRET || "";
 const appId = process.env.PROMO_APP_ID || "";
 const clientId = process.env.PROMO_CLIENT_ID || "";
