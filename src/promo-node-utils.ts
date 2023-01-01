@@ -66,5 +66,5 @@ function generateAccessToken(
 
   return encodeJwt(accessToken, clientSecret);
 }
-
+export type { PromoAccessTokenJwt };
 export { encodeJwt, generateAccessToken };
