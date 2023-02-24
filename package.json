@@ -106,7 +106,7 @@
   },
   "dependencies": {
     "@types/jsonwebtoken": ">=8",
-    "jsonwebtoken": ">=8",
-    "cross-fetch": ">=3.0"
+    "cross-fetch": ">=3.0",
+    "jsonwebtoken": ">=8"
   }
 }
