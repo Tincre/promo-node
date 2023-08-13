@@ -49,12 +49,13 @@ function generateAccessToken(
   clientId: string,
   appId: string,
   clientSecret: string,
-  expiration?: number
+  expiration?: number,
+  sub?: string
 ) {
   const timestamp = Date.now();
   const exp = expiration ? timestamp + expiration : timestamp + 1800;
   let accessToken: PromoAccessTokenJwt = {
-    sub: '',
+    sub: sub || '',
     iss: issuer,
     cid: clientId,
     aid: appId,
