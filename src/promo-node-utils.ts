@@ -42,6 +42,10 @@ interface PromoAccessTokenJwt {
  * @param appId the string appId from the tincre.dev dashboard
  * @param clientSecret the string clientSecret from the tincre.dev dashboard
  * @param expiration optional expiration number in seconds; defaults to 30 min
+ * @param sub optional subject string client email; defaults to nothing which
+ *   gives the scope parameter when validated within the Promo API a value of
+ *   'userRW'. If an email is included, it is checked against the emails within
+ *   the permissions tokens available.
  * @returns string JWT signed with the clientSecret provided
  */
 function generateAccessToken(
