@@ -14,8 +14,15 @@ describe('getToken', () => {
     clientSecret
   );
 
-  it('returns a string', async () => {
+  it('returns a string using the default api route', async () => {
     let resultToken: string = await getToken(accessTokenSigned);
+    expect(typeof resultToken).toBe('string');
+  });
+  it('returns a string using a default api route', async () => {
+    let resultToken: string = await getToken(
+      accessTokenSigned,
+      'https://feature.promo.api.tincre.dev'
+    );
     expect(typeof resultToken).toBe('string');
   });
 });
