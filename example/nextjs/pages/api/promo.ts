@@ -1,7 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 // Promo API route support: https://tincre.dev/docs/reference
-import { generateAccessToken } from '../../lib/promo-node-utils';
-import { getToken } from '../../../../dist/lib/getToken'; //'@tincre/promo-button';
+import { getToken, generateAccessToken } from '../../../../dist/index'; //'@tincre/promo-button';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = {
@@ -15,11 +14,14 @@ export default async function handler(
   const clientSecret: string = process.env.PROMO_CLIENT_SECRET || '';
   const appId: string = process.env.PROMO_APP_ID || '';
   const clientId: string = process.env.PROMO_CLIENT_ID || '';
+  const email: string = 'example@example.com';
   let accessTokenSigned: string = generateAccessToken(
     'http://localhost:3000',
     clientId,
     appId,
-    clientSecret
+    clientSecret,
+    undefined,
+    email
   );
 
   let resultToken: string = await getToken(accessTokenSigned);
