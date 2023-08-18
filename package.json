@@ -1,10 +1,10 @@
 {
-  "name": "@tincre/promo-button-node",
-  "version": "0.0.9",
+  "name": "@tincre/promo-node",
+  "version": "0.1.0",
   "scope": "@tincre",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tincre/promo-button-node.git"
+    "url": "git+https://github.com/Tincre/promo-node.git"
   },
   "license": "MPL-2.0",
   "author": "Jason R. Stevens, CFA on behalf of Tincre <jason@tincre.com> (https://tincre.com)",
