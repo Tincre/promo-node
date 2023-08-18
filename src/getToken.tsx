@@ -21,10 +21,17 @@ import fetch from 'cross-fetch';
  * @param accessToken string JWT-encoded access token per
  * https://tincre.dev/docs/guides/how-to-auth.
  *
+ * @param promoApiUrl string | undefined base url for the Promo API, e.g. https://promo.api.tincre.dev.
+ *
  * @returns a usable refresh token you can store on the client.
  */
-export async function getToken(accessToken: string): Promise<string> {
-  const url = 'https://promo.api.tincre.dev/token';
+export async function getToken(
+  accessToken: string,
+  promoApiUrl?: string
+): Promise<string> {
+  const url = promoApiUrl
+    ? promoApiUrl + '/token'
+    : 'https://promo.api.tincre.dev/token';
   let refreshToken: string;
   // Example POST method implementation:
   // Default options are marked with *
@@ -37,7 +44,6 @@ export async function getToken(accessToken: string): Promise<string> {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${accessToken}`,
-      // 'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
   console.debug(`getToken: awaiting response JSON`);
