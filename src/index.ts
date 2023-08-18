@@ -1,4 +1,4 @@
-import { generateAccessToken } from './promo-node-utils';
+import { generateAccessToken } from './generateAccessToken';
 import { getToken } from './getToken';
 import { getWidget, getWidgetCallback, showWidget } from './cloudinary-utils';
 import defaultOptions from './defaultOptions';

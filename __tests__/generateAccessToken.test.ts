@@ -1,4 +1,4 @@
-import { generateAccessToken } from '../src/promo-node-utils';
+import { generateAccessToken } from '../src/generateAccessToken';
 jest.setTimeout(40000);
 
 describe('generateAccessToken no sub', () => {
@@ -24,7 +24,7 @@ describe('generateAccessToken with sub and expiration', () => {
   const clientId = 'test client id';
   const hostName = 'http://localhost:3000';
   const sub = 'test@tincre.com';
-  const expiration = 123456
+  const expiration = 123456;
   let accessTokenSigned: string = generateAccessToken(
     hostName,
     clientId,

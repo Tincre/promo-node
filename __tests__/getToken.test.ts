@@ -1,5 +1,5 @@
 import { getToken } from '../src/.';
-import { generateAccessToken } from '../src/promo-node-utils';
+import { generateAccessToken } from '../src/.';
 jest.setTimeout(40000);
 
 describe('getToken', () => {
