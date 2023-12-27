@@ -9,6 +9,7 @@
 
 import { IMAGE_EXTENSIONS, VIDEO_EXTENSIONS } from './constants';
 import defaultOptions from './defaultOptions';
+import crypto from 'crypto';
 /**
  * A fetcher for useSwr
  *
@@ -54,5 +55,22 @@ function detectMediaType(url: string) {
 function getOptions(options?: object | undefined) {
   return Object.assign(options || {}, defaultOptions);
 }
+
+/**
+ * generateFilePath
+ *
+ * @description Given a file and Promo ID, generate a proper file path.
+ *
+ * @param file A File object
+ * @param pid A string Promo ID
+ *
+ * @returns string File path
+ */
+function generateFilePath(file: File, pid: string) {
+  const mimeType = file.type;
+  let ext: string = mimeType.slice(6);
+  const uuid = crypto.randomUUID();
+  return `${pid}/${uuid}.${ext}`;
+}
 // Fall back to default handling
-export { fetcher, detectMediaType, getOptions };
+export { fetcher, detectMediaType, getOptions, generateFilePath };
