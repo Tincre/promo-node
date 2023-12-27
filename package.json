@@ -9,15 +9,15 @@
   "license": "MPL-2.0",
   "author": "Jason R. Stevens, CFA on behalf of Tincre <jason@tincre.com> (https://tincre.com)",
   "main": "dist/index.js",
-  "module": "dist/promo-button-node.esm.js",
+  "module": "dist/promo-node.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
   ],
-  "homepage": "https://github.com/Tincre/promo-button-node#readme",
+  "homepage": "https://github.com/Tincre/promo-node#readme",
   "bugs": {
-    "url": "https://github.com/Tincre/promo-button-node/issues"
+    "url": "https://github.com/Tincre/promo-node/issues"
   },
   "scripts": {
     "analyze": "size-limit --why",
@@ -57,19 +57,19 @@
     }
   },
   "peerDependencies": {
-    "react": ">=16||<18",
-    "react-dom": ">=16||<18"
+    "react": ">=16",
+    "react-dom": ">=16"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "size-limit": [
     {
-      "path": "dist/promo-button-node.cjs.production.min.js",
+      "path": "dist/promo-node.cjs.production.min.js",
       "limit": "100 KB"
     },
     {
-      "path": "dist/promo-button-node.esm.js",
+      "path": "dist/promo-node.esm.js",
       "limit": "100 KB"
     }
   ],
