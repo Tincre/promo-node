@@ -63,7 +63,7 @@
     "@aws-sdk/s3-request-presigner": ">=3.481.0"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "size-limit": [
     {
