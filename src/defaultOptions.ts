@@ -2,9 +2,9 @@ import { Options } from './types/propTypes';
 
 const options: Options = {
   cloudinary: {
-    cloudName: 'b00st',
-    uploadPreset: 'uscb5ifq',
-    folder: 'B00STButton',
+    cloudName: 'tincre',
+    uploadPreset: 'iwngwfob',
+    folder: 'promo-button-submissions',
     multiple: false,
   },
   howItWorksContent: {
